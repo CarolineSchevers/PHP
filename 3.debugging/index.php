@@ -68,19 +68,19 @@ function combineNames($str1 = "", $str2 = "") {
     return implode(" - ", $params); // Expected type 'array'. Found 'string'.  --> changed the order within implode() 
 };
 
-function randomGenerate($arr, $amount) {
-    for ($i = $amount; $i > 0; $i--) {
-        array_push($arr, randomHeroName());
-    }
-    return $amount;
-};
+// function randomGenerate($arr, $amount) {
+//     for ($i = $amount; $i > 0; $i--) {
+//         array_push($arr, randomHeroName());
+//     }
+//     return $amount;
+// };
 
 function randomHeroName()
 {
     $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
     $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"]; // added ;
     $heroes = [$hero_firstnames, $hero_lastnames]; // syntax error, unexpected '$heroes' (T_VARIABLE) & Unexpected 'VariableName'. Expected ';'.
-    $randname = $heroes[rand(0,1)][rand(0, 10)];
+    $randname = $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
     return $randname;
 };
 
