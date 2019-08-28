@@ -1,4 +1,4 @@
-<?php include 'gamelogic/play_game.php'; ?>
+<?php include 'gamelogic/gamelogic.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -29,7 +29,8 @@
             echo '<img src="images/cardback.png" class="playerCard" width="100px" height="auto">';
           } else { echo '<img src="images/' . $player->hand[4] .'.png" class="playerCard" width="100px" height="auto">';};
           echo "<br>";
-          echo "<p> Player totalscore: $player->totalscore </p>";
+          echo "<p> Score player: $player->totalscore </p>";
+          echo "<p> Total wins: $player->wins </p>";
           echo "<br>";
     ?>
     </div>
@@ -49,7 +50,8 @@
             echo '<img src="images/cardback.png" class="playerCard" width="100px" height="auto">';
           } else { echo '<img src="images/' . $dealer->hand[4] .'.png" class="playerCard" width="100px" height="auto">';};
           echo "<br>";
-          echo "<p> Dealer totalscore: $dealer->totalscore </p>";
+          echo "<p> Score dealer: $dealer->totalscore </p>";
+          echo "<p> Total wins: $dealer->wins </p>";
           echo "<br>";
       ?>
     </div>

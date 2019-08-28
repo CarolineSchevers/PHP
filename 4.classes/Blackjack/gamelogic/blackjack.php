@@ -54,8 +54,6 @@ class Blackjack {
                 $this->totalscore -= 10;
                 $this->aces--;
         }
-        echo "<br>";
-        echo $this->totalscore;
     }
     
     public function check_hand() {
@@ -68,7 +66,6 @@ class Blackjack {
                 $this->aces++;
             }
         }
-        // echo "$this->aces aces found in hand!";
     }
 
     public function stand() {
@@ -95,9 +92,6 @@ function check_loser($person) {
 }
 
 function check_winner($person) {
-    echo 'checking';
-    echo '<br>';
-
  global $player;
  global $dealer;
  $player->name = "Player";
@@ -114,13 +108,13 @@ switch ($s = $person->totalscore ) {
  case $s === 21:
     if ($x === 21 && $y === 21) {
         echo "Dealer wins";
-    }
-    echo "$person->name wins, because he was $person->totalscore .";
+    } else {
+    echo "$person->name wins, because he was $person->totalscore .";};
     break;
 case $s < 21:
     if ($x < $y) { echo "Dealer wins";}; 
     if ($x > $y) { echo "Player wins";};
-    if ($x = $y) { echo "Dealer wins";};
+    if ($x === $y) { echo "Dealer wins";};
     break;
 }
 // function endturn()
