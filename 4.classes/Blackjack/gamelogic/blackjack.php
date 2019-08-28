@@ -41,22 +41,49 @@ class Blackjack {
     public function add_score() {
     $this->score;
     $this->totalscore = 0;
+    // $this->aces;
 
         foreach($this->score as $score_value) {
             $this->totalscore += $score_value;
+        };
+
+        $this->check_hand();
+
+        //Set aces to value 1 if necessary
+        while (($this->totalscore > 21) and ($this->aces > 0)) {
+                $this->totalscore -= 10;
+                $this->aces--;
         }
+        echo "<br>";
+        echo $this->totalscore;
+    }
+    
+    public function check_hand() {
+        // Check hand for ACES
+        $this->hand;
+        $this->aces = 0;
+
+        foreach($this->hand as $card) {
+            if(strpos($card, 'A') !== false) {
+                $this->aces++;
+            }
+        }
+        // echo "$this->aces aces found in hand!";
     }
 
     public function stand() {
-      
-        
+    // $dealer->totalscore < 15 hit
+    // $dealer->totalscore >= 17 checkwinner
+        while($this->totalscore < 17) {
+            $this->hit();
+        };
     }
-
     public function surrender() {
         echo "whoops I lost";
         new_game();
     }
 }
+
 function check_loser($person) {
     global $player;
     global $dealer;
@@ -68,6 +95,9 @@ function check_loser($person) {
 }
 
 function check_winner($person) {
+    echo 'checking';
+    echo '<br>';
+
  global $player;
  global $dealer;
  $player->name = "Player";
@@ -79,7 +109,7 @@ function check_winner($person) {
 
 switch ($s = $person->totalscore ) {
  case $s > 21: 
-    echo "$person->name loses, your score was $person->totalscore .";
+    echo "$person->name loses, his score was $person->totalscore .";
     break;
  case $s === 21:
     if ($x === 21 && $y === 21) {
@@ -88,14 +118,11 @@ switch ($s = $person->totalscore ) {
     echo "$person->name wins, because he was $person->totalscore .";
     break;
 case $s < 21:
-    if ($x < $y) {
-        echo "Dealer wins";
-    } else { echo "Player wins";};
+    if ($x < $y) { echo "Dealer wins";}; 
+    if ($x > $y) { echo "Player wins";};
+    if ($x = $y) { echo "Dealer wins";};
     break;
- default:
-    echo "other one";
-    break;
-};
+}
 // function endturn()
-};
+}
 ?>

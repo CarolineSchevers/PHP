@@ -31,6 +31,10 @@ if((!isset($_SESSION['playerhand'])) AND (!isset($_SESSION['dealerhand']))){
   }
 };
 
+// Makes the sum of the score-values
+$dealer->add_score();
+$player->add_score();
+
 //When pushing the hit-button
 if(isset($_GET["hit"])){
   //Store active player in session
@@ -45,21 +49,15 @@ if(isset($_GET["hit"])){
   check_loser($player);
 };
 
-//When pushing the stand-button
+//When pushing the stand-button, the turn goes to the dealer
 if (isset ($_GET["stand"])){
-  global $player;
-  global $dealer;
-    // Start the dealer of the dealer
-    $active_player = 1;
-    //Get the active player out of the session
-    $_SESSION['activeplayer'] = $active_player; 
-    
-    do {
-      $dealer->hit();
-      check_winner($dealer);}
-    while ($dealer->totalscore < 16);
-    
-    check_winner($dealer);
+
+  $active_player = 1; // start dealer turn
+  $_SESSION['activeplayer'] = $active_player;
+  // Dealers gets hit after stand is clicked
+  $dealer->stand();
+  // Check winner
+  check_winner($dealer);
 };
 
 //When pushing the surrender-button
@@ -69,10 +67,6 @@ if (isset($_GET["surrender"])){
   //Go to game.php
   header("location: game.php");
 }
-
-//Show the score anytime
-$player->add_score();
-$dealer->add_score();
 
 //Get the stored values (hand, score and active player) out of the session
 $_SESSION['playerhand'] = $player->hand;
