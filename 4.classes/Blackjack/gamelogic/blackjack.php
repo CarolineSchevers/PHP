@@ -74,7 +74,12 @@ class Blackjack {
         while($this->totalscore < 17) {
             $this->hit();
         };
+        // if ($this->totalscore >= 17) {
+        //     global $dealer;
+        //     echo '<img src="images/' . $dealer->hand[1] .'.png" class="playerCard" width="100px" height="auto">';
+        // }
     }
+
     public function surrender() {
         echo "whoops I lost";
         new_game();
@@ -116,7 +121,19 @@ case $s < 21:
     if ($x > $y) { echo "Player wins";};
     if ($x === $y) { echo "Dealer wins";};
     break;
+case (($s <21) && (count($person->hand) < 6)):
+    echo "Player wins";
 }
 // function endturn()
-}
+};
+
+// function show_first_value() {
+//     global $dealer;
+    
+//     if (count($dealer->hand) < 3) {
+//       echo "<p> Score dealer: " . $dealer->score[0] . "</p>";
+//     } else {
+//         echo "<p> Score dealer: $dealer->totalscore </p>";
+//     }
+//   }
 ?>

@@ -42,7 +42,9 @@
           echo '<img src="images/' . $dealer->hand[1] .'.png" class="playerCard" width="100px" height="auto">';
           if (count($dealer->hand) < 3) {
             echo '<img src="images/cardback.png" class="playerCard" width="100px" height="auto">';
-          } else { echo '<img src="images/' . $dealer->hand[2] .'.png" class="playerCard" width="100px" height="auto">';};
+          } else { 
+            
+            echo '<img src="images/' . $dealer->hand[2] .'.png" class="playerCard" width="100px" height="auto">';};
           if (count($dealer->hand) < 4) {
             echo '<img src="images/cardback.png" class="playerCard" width="100px" height="auto">';
           } else { echo '<img src="images/' . $dealer->hand[3] .'.png" class="playerCard" width="100px" height="auto">';};
@@ -50,6 +52,7 @@
             echo '<img src="images/cardback.png" class="playerCard" width="100px" height="auto">';
           } else { echo '<img src="images/' . $dealer->hand[4] .'.png" class="playerCard" width="100px" height="auto">';};
           echo "<br>";
+          // show_first_value();
           echo "<p> Score dealer: $dealer->totalscore </p>";
           echo "<p> Total wins: $dealer->wins </p>";
           echo "<br>";

@@ -52,11 +52,10 @@ if (isset ($_GET["stand"])){
 
   $active_player = 1; // start dealer turn
   $_SESSION['activeplayer'] = $active_player;
+  
   // Dealers gets hit after stand is clicked
   $dealer->stand();
 
-  
-    
   // Check winner
   check_winner($dealer);
 };
