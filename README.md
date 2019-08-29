@@ -2,7 +2,6 @@
 
 1. Javascript-to-php
 * Exercise: Replace the JavaScript with php, without changing the look of the website.
-  * [html document = given exercise](https://carolineschevers.github.io/learning-php/javascript-to-php/index.html) 
 
 2. Data-sharing
 * Exercise 1: After you submitted your name, php should display: Welcome, $username on the page.
