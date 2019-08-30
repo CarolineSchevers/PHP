@@ -10,7 +10,7 @@
 </head>
 
 <body>
-
+<h1>Black Jack</h1>
   <div class='infobox'>
     <div>
       <h2>Player:</h2>
@@ -31,7 +31,6 @@
           echo "<br>";
           echo "<p> Score player: $player->totalscore </p>";
           echo "<p> Total wins: $player->wins </p>";
-          echo "<br>";
     ?>
     </div>
     <div>
@@ -55,7 +54,6 @@
           // show_first_value();
           echo "<p> Score dealer: $dealer->totalscore </p>";
           echo "<p> Total wins: $dealer->wins </p>";
-          echo "<br>";
       ?>
     </div>
   </div>
@@ -64,6 +62,8 @@
     <input type="submit" value="Hit" name="hit">
     <input type="submit" value="Stand" name="stand">
     <input type="submit" value="Surrender" name="surrender">
+    <input type="submit" value="New Round" name="newround">
+    <input type="submit" value="New Game" name="newgame">
   </form>
 
 </body>

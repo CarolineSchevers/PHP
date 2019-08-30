@@ -1,9 +1,9 @@
 <?php
     if(isset($_GET['start'])){
-
         header('Location: game.php');
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

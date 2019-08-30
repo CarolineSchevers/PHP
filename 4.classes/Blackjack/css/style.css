@@ -1,24 +1,51 @@
 @import url('https://fonts.googleapis.com/css?family=Acme&display=swap');
+@font-face {
+    font-family: 'MyWebFont';
+    src: url('PokerInOctober-Demo.otf');
+}
 
 body {
     background-image: url('../images/pokerfelt.jpg');
     background-repeat: repeat;
     color: white;
     font-family: 'Acme', sans-serif;
+    margin: 0;
+    padding: 0;
 }
+ h1 {
+    font-family: 'MyWebFont', Fallback, sans-serif;
+    font-size: 60px;
+    text-align: center;
+    font-weight: lighter;
+    margin: 0;
+    padding: 0;
+ }
+
+ h2 {
+    font-family: 'MyWebFont', Fallback, sans-serif;
+    font-size: 20px;
+    text-align: left;
+    font-weight: lighter;
+    margin: 10px;
+    padding: 0;
+ }
 
 .infobox {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .infobox div{
-    border: 1px solid white;
-    margin: 30px;
-    padding: 20px;
+    margin: 20px 10px;
+    padding: 10px;
     width: auto;
-    font-size: 20px; 
+    height: auto;
+    font-size: 15px;
+    font-weight: lighter; 
+    border: 25px solid #ffffff;
+    -o-border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
+       border-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='75' height='75'%3E%3Cg fill='none' stroke='%23ffffff' stroke-width='2'%3E%3Cpath d='M1 1h73v73H1z'/%3E%3Cpath d='M8 8h59v59H8z'/%3E%3Cpath d='M8 8h16v16H8zM51 8h16v16H51zM51 51h16v16H51zM8 51h16v16H8z'/%3E%3C/g%3E%3Cg fill='%23ffffff'%3E%3Ccircle cx='16' cy='16' r='2'/%3E%3Ccircle cx='59' cy='16' r='2'/%3E%3Ccircle cx='59' cy='59' r='2'/%3E%3Ccircle cx='16' cy='59' r='2'/%3E%3C/g%3E%3C/svg%3E") 25;
 }
 
 form {

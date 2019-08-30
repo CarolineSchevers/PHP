@@ -1,10 +1,5 @@
 <?php 
-
-include 'carddeck.php';
-include 'reset_scores.php';
-
 $rand_card; // global
-$game_log = []; // global
 
 // 0 = player
 // 1 = dealer
@@ -39,9 +34,9 @@ class Blackjack {
 
     // function to add the score to the players totalscore
     public function add_score() {
-    $this->score;
-    $this->totalscore = 0;
-    // $this->aces;
+
+        $this->score;
+        $this->totalscore = 0;
 
         foreach($this->score as $score_value) {
             $this->totalscore += $score_value;
@@ -66,11 +61,20 @@ class Blackjack {
                 $this->aces++;
             }
         }
+        // Check if the player has 5 cards and less than 21 points. If so, the player wins
+        if ((count($this->hand) == 5) && ($this->totalscore < 21)) {
+            global $player;
+            echo "$this->name wins";
+            return $player->wins++;
+        }
     }
 
     public function stand() {
     // $dealer->totalscore < 15 hit
     // $dealer->totalscore >= 17 checkwinner
+        echo "Player choose stand.";
+        echo "<br>";
+        
         while($this->totalscore < 17) {
             $this->hit();
         };
@@ -78,62 +82,11 @@ class Blackjack {
         //     global $dealer;
         //     echo '<img src="images/' . $dealer->hand[1] .'.png" class="playerCard" width="100px" height="auto">';
         // }
+        
     }
 
     public function surrender() {
         echo "whoops I lost";
-        new_game();
     }
 }
-
-function check_loser($person) {
-    global $player;
-    global $dealer;
-    $player->name = "Player";
-    $dealer->name = "Dealer";
-    if ($person->totalscore > 21) { 
-    echo "$person->name loses, his score was $person->totalscore .";
-    }
-}
-
-function check_winner($person) {
- global $player;
- global $dealer;
- $player->name = "Player";
- $dealer->name = "Dealer";
-
- global $dealer;
- $x = $player->totalscore;
- $y = $dealer->totalscore;
-
-switch ($s = $person->totalscore ) {
- case $s > 21: 
-    echo "$person->name loses, his score was $person->totalscore .";
-    break;
- case $s === 21:
-    if ($x === 21 && $y === 21) {
-        echo "Dealer wins";
-    } else {
-    echo "$person->name wins, because he was $person->totalscore .";};
-    break;
-case $s < 21:
-    if ($x < $y) { echo "Dealer wins";}; 
-    if ($x > $y) { echo "Player wins";};
-    if ($x === $y) { echo "Dealer wins";};
-    break;
-case (($s <21) && (count($person->hand) < 6)):
-    echo "Player wins";
-}
-// function endturn()
-};
-
-// function show_first_value() {
-//     global $dealer;
-    
-//     if (count($dealer->hand) < 3) {
-//       echo "<p> Score dealer: " . $dealer->score[0] . "</p>";
-//     } else {
-//         echo "<p> Score dealer: $dealer->totalscore </p>";
-//     }
-//   }
 ?>
