@@ -39,13 +39,13 @@ function check_21($person) {
 
     if ($s === 21) {
         if ($x === 21 && $y === 21) {
-            echo "Dealer wins";
+            echo "Dealer wins.";
             $dealer->wins++;
         } else if ($x === 21 && $y != 21){
-            echo "$person->name wins, because he was $person->totalscore .";
+            echo "$person->name wins, because his score was $person->totalscore .";
             return $player->wins++;
         } else {
-            echo "$person->name wins, because he was $person->totalscore .";
+            echo "$person->name wins, because his score was $person->totalscore .";
             return $dealer->wins++;
         }
     }
@@ -63,7 +63,7 @@ function check_winner($person) {
    switch ($s = $person->totalscore ) {
     case $s > 21: 
        if($x > 21 && $y > 21) {
-           echo "The score of the player and dealer was above 21.";
+           echo "The score of the player and the dealer was above 21.";
         } else if ($x > 21 && $y <= 21) {
            echo "Player loses, his score was " . $player->totalscore . ". <br> Dealer wins.";
            return $dealer->wins++;
@@ -92,6 +92,7 @@ function check_winner($person) {
 function new_round() {
     global $player;
     global $dealer;
+    global $person;
 
     $player->hand = [];
     $dealer->hand = [];
@@ -100,6 +101,8 @@ function new_round() {
 
     session_start();
     start_game();
+    check_loser($dealer);
+    check_21($person);
 };
 
 // function show_first_value() {

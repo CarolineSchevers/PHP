@@ -10,12 +10,13 @@
 </head>
 
 <body>
-<h1>Black Jack</h1>
-  <div class='infobox'>
-    <div>
-      <h2>Player:</h2>
+  <div class="container">
+    <h1>Black Jack</h1>
+    <div class='infobox'>
+      <div>
+        <h2>Player</h2>
 
-      <?php 
+        <?php 
           echo "<br>";
           echo '<img src="images/' . $player->hand[0] .'.png" class="playerCard" width="100px" height="auto">';
           echo '<img src="images/' . $player->hand[1] .'.png" class="playerCard" width="100px" height="auto">';
@@ -32,10 +33,10 @@
           echo "<p> Score player: $player->totalscore </p>";
           echo "<p> Total wins: $player->wins </p>";
     ?>
-    </div>
-    <div>
-      <h2>Dealer:</h2>
-      <?php
+      </div>
+      <div>
+        <h2>Dealer</h2>
+        <?php
           echo "<br>";
           echo '<img src="images/' . $dealer->hand[0] .'.png" class="playerCard" width="100px" height="auto">';
           echo '<img src="images/' . $dealer->hand[1] .'.png" class="playerCard" width="100px" height="auto">';
@@ -55,17 +56,17 @@
           echo "<p> Score dealer: $dealer->totalscore </p>";
           echo "<p> Total wins: $dealer->wins </p>";
       ?>
+      </div>
     </div>
+
+    <form action="" method="GET">
+      <input type="submit" value="Hit" name="hit">
+      <input type="submit" value="Stand" name="stand">
+      <input type="submit" value="Surrender" name="surrender">
+      <input type="submit" value="New Round" name="newround">
+      <input type="submit" value="New Game" name="newgame">
+    </form>
   </div>
-
-  <form action="" method="GET">
-    <input type="submit" value="Hit" name="hit">
-    <input type="submit" value="Stand" name="stand">
-    <input type="submit" value="Surrender" name="surrender">
-    <input type="submit" value="New Round" name="newround">
-    <input type="submit" value="New Game" name="newgame">
-  </form>
-
 </body>
 
 </html>
