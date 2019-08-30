@@ -1,5 +1,3 @@
-Result: [Blackjack](https://carolineschevers.github.io/PHP/4.classes/Blackjack/)
-
 # Challenge: Learning Classes
 
 |Challenge Parameters  |Challenge Details              |
