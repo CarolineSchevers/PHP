@@ -1,11 +1,11 @@
 <?php
     include_once 'connection.php';
 
-    // if(!isset($_SERVER['HTTP_REFERER'])){
-    //     // redirect them to your desired location
-    //     header('location:../5.mysql/login.php');
-    //     exit;
-    // }
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        // redirect them to your desired location
+        header('location:../5.mysql/login.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
@@ -43,8 +43,6 @@
 
             $sql = "SELECT id, first_name, last_name, email,preferred_language  FROM hopper_2";
             $result = $conn->query($sql);
-
-        
 
             if ($result->num_rows > 0) {
                 // output data of each row
