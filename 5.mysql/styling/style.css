@@ -1,0 +1,92 @@
+body {
+  background-color: #070045;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 30px;
+}
+
+.container {
+  background-color: white;
+  color: #070045;
+  padding: 20px;
+}
+
+.bill {
+  background-color: rgba(0, 0, 255, 0.274);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 450px;
+  width: 820px;
+  border-radius: 1rem;
+}
+
+.bill img {
+  height: 400px;
+  width: 780px;
+  border-radius: 1rem;
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px 30px;
+}
+
+.header .avatar {
+  height: 200px;
+  margin: -100px 0 0 0;
+}
+
+.header .flag {
+  width: 40px;
+  margin-left: 20px;
+  border: 1px solid black;
+}
+
+.header .headright {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.infobox {
+  font-size: 20px;
+  margin-top: 10px;
+}
+/*# sourceMappingURL=style.css.map */

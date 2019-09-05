@@ -1,0 +1,67 @@
+body {
+    background-color: #070045;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+
+}
+
+.container {
+    background-color: white;
+    color: #070045;
+    padding: 20px;
+    
+}
+
+.bill {
+    background-color: rgba(0, 0, 255, 0.274);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 450px;
+    width: 820px;
+    border-radius: 1rem;
+
+    img {
+        height: 400px;
+        width: 780px;
+        border-radius: 1rem;
+    }
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin:0px 30px;
+
+    .avatar {
+        height: 200px;
+        margin: -100px 0 0 0;
+    }
+
+    .flag {
+        width: 40px;
+        margin-left: 20px;
+        border: 1px solid black;
+    }
+
+    .headright {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+    }
+}
+
+.infobox {
+   font-size: 20px;
+   margin-top: 10px;
+}
+
+button.profile_buttons {
+    width: 100px;
+    height: 50px;
+}
