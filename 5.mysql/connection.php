@@ -19,7 +19,10 @@
     
     // Why we do this here
     return $conn;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 119c9a55bdfa6ddff202c2717a1db658ef88c8f0
    }
    
     // And why would we do this here ?

@@ -18,8 +18,13 @@
         <input type="text" name="linkedin"  value="<?php echo $linkedin ?>" placeholder="LinkedIn profile" required><br>
         <input type="text" name="github" value="<?php echo $github ?>" placeholder="Github profile" required><br>
         <input type="text" name="email" value="<?php echo $email ?>" placeholder="Email" required><br>
+<<<<<<< HEAD
         <input type="password" name="password" placeholder="Password" required><br>
         <input type="password" name="c_password" placeholder="Confirm password" required><br>
+=======
+        <input type="password" name="pwd" placeholder="Password" required><br>
+        <input type="password" name="c_pwd" placeholder="Confirm password" required><br>
+>>>>>>> 119c9a55bdfa6ddff202c2717a1db658ef88c8f0
         <select name="preferred_language" id="preferred_language" required>
             <option value="nl">Nederlands</option>
             <option value="fr">Français</option>
