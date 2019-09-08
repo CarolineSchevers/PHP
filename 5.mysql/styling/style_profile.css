@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css?family=Paprika&display=swap");
+body {
+  background: #0d18c1;
+  background: -webkit-gradient(linear, left top, left bottom, from(#0d18c1), to(#08aaa1));
+  background: linear-gradient(180deg, #0d18c1 0%, #08aaa1 100%);
+  background-size: cover;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: white;
+  font-family: 'Paprika', cursive;
+}
+
+input {
+  margin: 5px 10px;
+  width: 300px;
+  height: 25px;
+  border: 2px solid blue;
+  border-radius: 0.5rem;
+  padding: 5px;
+}
+
+select, .submit {
+  margin-left: 10px;
+  width: 315px;
+  height: 30px;
+}
+
+.submit:hover {
+  background-color: blue;
+  color: white;
+}
+
+.profile {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 3fr 3fr 1fr;
+      grid-template-columns: 1fr 3fr 3fr 1fr;
+  -ms-grid-rows: 300px 300px;
+      grid-template-rows: 300px 300px;
+      grid-template-areas: ". avatarbox bill ." ". personal_name yt .";
+}
+
+.avatarbox {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: avatarbox;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.personal_name {
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: personal_name;
+  margin-left: 100px;
+}
+
+.bill {
+  -ms-grid-row: 1;
+  -ms-grid-column: 3;
+  grid-area: bill;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.yt {
+  -ms-grid-row: 2;
+  -ms-grid-column: 3;
+  grid-area: yt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+img {
+  width: 400px;
+  height: 200px;
+  border-radius: 1rem;
+}
+
+.avatar {
+  width: 300px;
+}
+
+.flag {
+  width: 40px;
+  height: auto;
+  border: 1px solid black;
+}
+
+button.profile_buttons {
+  width: 100px;
+  height: 50px;
+}
+/*# sourceMappingURL=style_profile.css.map */

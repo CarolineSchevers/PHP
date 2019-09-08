@@ -1,0 +1,21 @@
+@import 'general';
+
+body {
+    height: 100vh;
+}
+
+.login_page {
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    align-items: center;
+}
+
+a {
+    margin-left: 10px;
+    color: rgb(92, 0, 128);
+
+    &:visited {
+        color:red;
+    }
+}

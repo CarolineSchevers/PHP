@@ -1,11 +1,11 @@
 <?php
     include_once 'connection.php';
 
-    if(!isset($_SERVER['HTTP_REFERER'])){
-        // redirect them to your desired location
-        header('location:../5.mysql/login.php');
-        exit;
-    }
+    // if(!isset($_SERVER['HTTP_REFERER'])){
+    //     // redirect them to your desired location
+    //     header('location:../5.mysql/login.php');
+    //     exit;
+    // }
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styling/style_index.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <style>
         td,
