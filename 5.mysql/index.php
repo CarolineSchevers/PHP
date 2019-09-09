@@ -28,8 +28,8 @@
 
 <body>
     <form method='POST'>
-        <button type='submit' name='login'>Log in</button>
-        <button type='submit' name='logout'>Log out</button>
+        <button type='submit' class='log_buttons' name='login'>Log in</button>
+        <button type='submit' class='log_buttons' name='logout'>Log out</button>
     </form>
     <table>
         <tr>

@@ -28,7 +28,11 @@
                 <option value="fr">Français</option>
                 <option value="gb-nir">English</option>
                 <option value="de">Deutch</option>
-                <option value="dz">Dzongkha</option>
+                <option value="es">Español</option>
+            </select>
+            <select name="belikebill" id="belikebill" style="width: 150px; margin-left: 20px;" required>
+                <option value="f">Female</option>
+                <option value="m">Male</option>
             </select><br>
             <input type="text" class="link" name="avatar" value="<?php echo $avatar ?>" placeholder="Avatar link" required><br>
             <input type="text" class="link" name="linkedin"  value="<?php echo $linkedin ?>" placeholder="LinkedIn profile link" required><br>

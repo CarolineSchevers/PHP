@@ -27,17 +27,13 @@
 </head>
 
 <body>
-    <form method='POST'>
-        <button type='submit' name='login'>Log in</button>
-        <button type='submit' name='logout'>Log out</button>
-    </form>
     <?php
             //connecting to database
             $conn = openConnection();
             $link = $_GET['user'];
 
             //fetching data + display the data
-            $sql = "SELECT first_name, last_name, username, linkedin, github, email, preferred_language, avatar, video, quote, quote_author FROM hopper_2 WHERE email='$link'";
+            $sql = "SELECT first_name, last_name, username, linkedin, github, email, preferred_language, belikebill, avatar, video, quote, quote_author FROM hopper_2 WHERE email='$link'";
             $result = $conn->query($sql);
 
                 while($row = $result->fetch_assoc()) {  
@@ -62,22 +58,31 @@
                             <div> ~ " . $row['quote_author'] . "</div>
                         </div>
 
+                        <div class='log_buttons'>
+                            <form method='POST' >
+                                <button type='submit' class='log_buttons' name='login'>Log in</button>
+                                <button type='submit' class='log_buttons' name='logout'>Log out</button>
+                            </form>
+                        </div>
+
                         <div class='bill'>
-                            <img class='bill' src='https://belikebill.ga/billgen-API.php?default=1&name=". $row['first_name'] . "&sex=f' />
+                            <img class='bill' src='https://belikebill.ga/billgen-API.php?default=1&name=". $row['first_name'] . "&sex=" .$row['belikebill']."' />
                         </div>
                         <div class='yt'>
-                            <iframe width='400px' height='295px' src='$url'> </iframe>   
+                            <iframe width='500px' height='300px' src='$url'> </iframe>   
                         </div>
                     </div>";
                 }
 
             if($_SESSION['login_email'] === $link) {
                 echo 
-                "<form method='post'>
-                    <button type='submit' class='profile_buttons' name='edit'>Edit</button>
-                    <button type='submit' class='profile_buttons' name='delete'>Delete</button>
-                </form>";
-            }   
+                "<div class='profile_buttons'>
+                    <form method='post'>
+                        <button type='submit' name='edit'>Edit</button>
+                        <button type='submit' name='delete'>Delete</button>
+                    </form>
+                </div>";
+            }
             
             if(isset($_POST['edit'])) {
                 header("Location: ../5.mysql/edit.php?user=$link"); 

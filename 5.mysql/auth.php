@@ -19,12 +19,11 @@ session_start();
    $c_password = $conn->real_escape_string($_POST['c_password']);   // remove when pushing to database Rafael
    $c_password_ḩash = md5($c_password);                             // remove when pushing to database Rafael
    $preferred_language = $_POST['preferred_language'];
+   $belikebill = $_POST['belikebill'];
    $avatar = $conn->real_escape_string($_POST['avatar']);
    $video = $_POST['video'];
    $quote = $conn->real_escape_string($_POST['quote']);
    $quote_author = $conn->real_escape_string($_POST['quote_author']);
-
-   $string     = $row['video'];
   
    if (isset($_POST['submit'])) {
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)){  // failed email
@@ -33,6 +32,27 @@ session_start();
         
         if ($_POST["password"] !== $_POST["c_password"]) { // failed password
             echo "<script type='text/javascript'>alert(\"The passwords don't match. Please try again.\");</script>";
+        }
+
+        if (!filter_var($avatar, FILTER_VALIDATE_URL)) { 
+            echo "<script type='text/javascript'>alert(\"Invalid URL for avatar.\");</script>";
+            $avatar = "";
+
+        }
+
+        if (!filter_var($linkedin, FILTER_VALIDATE_URL)) { 
+            echo "<script type='text/javascript'>alert(\"Invalid URL for LinkedIn.\");</script>";
+            $linkedin = "";
+        }
+
+        if (!filter_var($github, FILTER_VALIDATE_URL)) { 
+            echo "<script type='text/javascript'>alert(\"Invalid URL for GitHub.\");</script>";
+            $github = "";
+        }
+
+        if (!filter_var($video, FILTER_VALIDATE_URL)) { 
+            echo "<script type='text/javascript'>alert(\"Invalid URL for video.\");</script>";
+            $video = "";
         }
 
         $email_check_query = "SELECT * FROM hopper_2 WHERE email='$email'";
@@ -45,11 +65,10 @@ session_start();
             }
         }
         
-        if (($_POST["password"] === $_POST["c_password"]) && (filter_var($email, FILTER_VALIDATE_EMAIL))) { 
-        
+        if (($_POST["password"] === $_POST["c_password"]) && (filter_var($email, FILTER_VALIDATE_EMAIL))  && (filter_var($avatar, FILTER_VALIDATE_URL)) && (filter_var($linkedin, FILTER_VALIDATE_URL))  && (filter_var($github, FILTER_VALIDATE_URL))  && (filter_var($video, FILTER_VALIDATE_URL))) { 
             // remove c_password and '$c_password_ḩash' when pushing to database Rafael
-           $sql = "INSERT INTO hopper_2 (first_name, last_name, username, linkedin, github, email, password, c_password, preferred_language, avatar, video, quote, quote_author) 
-           VALUES ('$first_name', '$last_name', '$username', '$linkedin', '$github', '$email', '$password_hash', '$c_password_ḩash', '$preferred_language', '$avatar', '$video', '$quote', '$quote_author');";
+           $sql = "INSERT INTO hopper_2 (first_name, last_name, username, linkedin, github, email, password, c_password, preferred_language, belikebill, avatar, video, quote, quote_author) 
+           VALUES ('$first_name', '$last_name', '$username', '$linkedin', '$github', '$email', '$password_hash', '$c_password_ḩash', '$preferred_language', '$belikebill', '$avatar', '$video', '$quote', '$quote_author');";
 
            if ($result = mysqli_query($conn, $sql)) {
                header("Location: ../5.mysql/profile.php?user=$email");
