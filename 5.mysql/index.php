@@ -1,11 +1,11 @@
 <?php
     include_once 'connection.php';
 
-    // if(!isset($_SERVER['HTTP_REFERER'])){
-    //     // redirect them to your desired location
-    //     header('location:../5.mysql/login.php');
-    //     exit;
-    // }
+    if(!isset($_SERVER['HTTP_REFERER'])){
+        // redirect them to your desired location
+        header('location:../5.mysql/login.php');
+        exit;
+    }
 ?>
 
 <!DOCTYPE html>
